@@ -1,2 +1,3 @@
-# Qt-Programs
-Programs made in Qt 
+Calculator:
+Right now it is partially working. I will update it soon. Suggestions are Welcome.
+ 
