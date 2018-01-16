@@ -42,11 +42,11 @@ void MainWindow::digit_clicked(){
 double lnumber;
 QString newlnumber;
  if((ui->pushButton_plus->isChecked() || ui->pushButton_minus->isChecked() ||
-         ui->pushButton_multiply->isChecked() || ui->pushButton_divide->isChecked()))// && (!uSecNum))
+         ui->pushButton_multiply->isChecked() || ui->pushButton_divide->isChecked()) && (!uSecNum))
 {
-     lnumber = button->text().toDouble();
-     uSecNum = true;
+     lnumber = (button->text()).toDouble();
      newlnumber = QString::number(lnumber,'g',15);
+     uSecNum = true;
  }
  else if(ui->label->text().contains('.') && button->text() == "0"){
      newlnumber = ui->label->text() + button->text();
@@ -93,7 +93,7 @@ void MainWindow::on_pushButton_clear_released()
     ui->pushButton_minus->setChecked(false);
     ui->pushButton_multiply->setChecked(false);
     ui->pushButton_divide->setChecked(false);
-    uSecNum = true;
+    uSecNum = false;
 
     ui->label->setText("0");
 }
@@ -132,7 +132,7 @@ void MainWindow::on_pushButton_equal_released()
         ui->label->setText(labelNum);
         ui->pushButton_divide->setChecked(false);
     }
-    uSecNum = true;
+    uSecNum = false;
 }
 
 void MainWindow::binaryOperatorClicked(){
